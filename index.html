@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두근두근 방과후 소식지</title>
+  <style>
+    /* 기존 CSS 그대로 유지 */
+  </style>
+  <script>
+    window.onload = function () {
+      const saved = localStorage.getItem("savedNewsletterContent");
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          const target = document.getElementById("dynamic-story");
+          if (target && parsed.text) {
+            target.innerHTML += `<p>${parsed.text}</p>`;
+          }
+        } catch (e) {
+          console.error("저장된 데이터를 파싱하는 중 오류 발생:", e);
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="newspaper">
+    <img src="두근두근로고(배경없음).png" alt="두근두근 로고" class="logo">
+    <div class="header">
+      <h1>두근두근 방과후 소식지</h1>
+      <p>2025년 8월호 | 우리 아이들의 특별한 이야기</p>
+      <div class="info-box">
+        <span>이사장 : 딱지</span>
+        <span>발행인 : 운영위원회</span>
+        <span>편집인 : 생활이사 바스켓</span>
+        <span>이천이십오년팔월두근두근방과후소식지</span>
+      </div>
+    </div>
+
+    <!-- 여기에 각 section 내용을 추가하여 편집 -->
+    <div class="section">
+      <h2>💌 이사장 인사말</h2>
+      <p>(내용을 여기에 입력하세요)</p>
+    </div>
+
+    <div class="section">
+      <h2>🗓️ 7월 주요 활동</h2>
+      <ul>
+        <li>(활동 내용을 여기에 입력하세요)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🎉 활동 사진으로 보는 7월의 두근두근</h2>
+      <div class="gallery">
+        <!-- 사진 img 태그 삽입 -->
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>[특집] 🏓 (특집 주제 입력)</h2>
+      <p>(특집 기사 내용 입력)</p>
+      <div class="gallery">
+        <!-- 관련 이미지 삽입 -->
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🎉 (기타 주요 행사)</h2>
+      <p>(내용 입력)</p>
+    </div>
+
+    <div class="section">
+      <h2>📅 다음 달 미리보기</h2>
+      <ul>
+        <li>(예정된 활동을 여기에 입력)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🙏 감사합니다</h2>
+      <p>7월 활동에 함께 해주신 모든 분들께 감사드립니다.</p>
+      <table>
+        <thead>
+          <tr><th>날짜</th><th>요일</th><th>구분</th><th>이름</th></tr>
+        </thead>
+        <tbody>
+          <!-- 감사 명단 입력 -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>🌞⛱️ 두근두근 여름캠프 안내</h2>
+      <ul>
+        <li><a href="https://dgdg-news.github.io/summercamp2025/" target="_blank">🌞⛱️ 두근두근 여름캠프 안내 보기</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>두근두근 방과후 소식지 | Copyright © 과천두근두근공동체교육사회적협동조합 All Rights Reserved. | 02-504-7643</p>
+      <p>조합가입 및 상담문의 : 홍보이사 튤립 (010-3469-0585 / 상담문자환영)</p>
+      <p>
+        <a href="https://blog.naver.com/2g2g4kids" target="_blank">
+          <img src="naver-blog-icon.png" alt="네이버 블로그" style="height: 20px; vertical-align: middle;"> 네이버 블로그
+        </a> |
+        <a href="https://cafe.naver.com/2g2g4kids" target="_blank">
+          <img src="naver-cafe-icon.png" alt="네이버 카페" style="height: 20px; vertical-align: middle;"> 네이버 카페
+        </a> |
+        <a href="https://www.instagram.com/2g2g4kids" target="_blank">
+          <img src="instagram-icon.png" alt="인스타그램" style="height: 20px; vertical-align: middle;"> 인스타그램
+        </a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
